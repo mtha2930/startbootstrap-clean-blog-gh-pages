@@ -1,0 +1,40 @@
+body {
+    background-color: #fdf6e3; /* Light cream background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .fontColor {
+    background-color: #fdf6e3;
+    padding: 20px;
+  }
+  
+  h1, h2, h3 {
+    color: #4b0082; /* Indigo headings */
+    margin-top: 20px;
+  }
+  
+  p {
+    color: #333333; /* Dark text */
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  a {
+    color: #ff7f50; /* Coral link color */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  ul {
+    margin-left: 20px;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  

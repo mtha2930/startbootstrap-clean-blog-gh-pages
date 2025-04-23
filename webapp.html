@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Number!</h1>
+        <p>Guess a number between 1 and 100:</p>
+        <input type="number" id="guess" placeholder="Enter a number" min="1" max="100">
+        <button onclick="checkGuess()">Guess</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const guess = document.getElementById('guess').value;
+            const messageElement = document.getElementById('message');
+            attempts++;
+
+            if (guess < randomNumber) {
+                messageElement.textContent = `Too low! Try again. Attempts: ${attempts}`;
+            } else if (guess > randomNumber) {
+                messageElement.textContent = `Too high! Try again. Attempts: ${attempts}`;
+            } else {
+                messageElement.textContent = `Correct! You guessed the number in ${attempts} attempts.`;
+            }
+        }
+    </script>
+</body>
+</html>
